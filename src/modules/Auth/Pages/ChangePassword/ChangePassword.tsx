@@ -21,7 +21,6 @@ export default function ChangePassword() {
   const onSubmit: SubmitHandler<AuthSchema> = async (
     data: AuthSchema
   ): Promise<void> => {
-    const toastId = toast.loading("Please wait...");
     try {
       const response = await axios.post<Response>(
         `${BASE_URL}/auth/change-password`,
@@ -42,19 +41,9 @@ export default function ChangePassword() {
           (Array.isArray(error.response?.data?.message)
             ? error.response?.data?.message[0]
             : error?.response?.data?.message) || "Something went wrong!";
-        toast.update(toastId, {
-          render: errorMessage,
-          type: "error",
-          isLoading: false,
-          autoClose: 1000,
-        });
+        toast.error(errorMessage);
       } else {
-        toast.update(toastId, {
-          render: "Unexpected error occurred!",
-          type: "error",
-          isLoading: false,
-          autoClose: 1000,
-        });
+        toast.error("Unexpected error occurred!");
       }
     }
   };

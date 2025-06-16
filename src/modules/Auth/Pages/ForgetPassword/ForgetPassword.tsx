@@ -18,18 +18,12 @@ export default function ForgetPassword() {
   const onSubmit: SubmitHandler<AuthSchema> = async (
     data: AuthSchema
   ): Promise<void> => {
-    const toastId = toast.loading("Please wait...");
     try {
       const response = await axios.post<Response>(
         `${BASE_URL}/auth/forgot-password`,
         data
       );
-      toast.update(toastId, {
-        render: response?.data?.message,
-        type: "success",
-        isLoading: false,
-        autoClose: 1000,
-      });
+      toast.success(response?.data?.message || "Password reset link sent!");
       navigate("/reset-password");
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -37,17 +31,9 @@ export default function ForgetPassword() {
           (Array.isArray(error.response?.data?.message)
             ? error.response?.data?.message[0]
             : error?.response?.data?.message) || "Something went wrong!";
-        toast.update(toastId, {
-          render: errorMessage,
-          type: "error",
-          isLoading: false,
-          autoClose: 1000,
-        });
+        toast.error(errorMessage);
       } else {
-        toast.update(toastId, {
-          render: "Unexpected error occurred!",
-          type: "error",
-          isLoading: false,
+        toast.error("Unexpected error occurred!", {
           autoClose: 1000,
         });
       }

@@ -28,7 +28,6 @@ export default function Login() {
   const onSubmit: SubmitHandler<AuthSchema> = async (
     data: AuthSchema
   ): Promise<void> => {
-    const toastId = toast.loading("Please wait...");
     try {
       const response = await axios.post<Response>(
         `${BASE_URL}/auth/login`,
@@ -37,6 +36,7 @@ export default function Login() {
       Cookies.set("authBookToken", response?.data?.data?.accessToken, {
         expires: 365,
       });
+      toast.success("Login successful!");
       navigate("/dashboard/home");
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -44,14 +44,9 @@ export default function Login() {
           (Array.isArray(error.response?.data?.message)
             ? error.response?.data?.message[0]
             : error?.response?.data?.message) || "Something went wrong!";
-        console.log(errorMessage);
+        toast.error(errorMessage);
       } else {
-        toast.update(toastId, {
-          render: "Unexpected error occurred!",
-          type: "error",
-          isLoading: false,
-          autoClose: 1000,
-        });
+        toast.error("Unexpected error occurred!");
       }
     }
   };
