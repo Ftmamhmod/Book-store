@@ -78,7 +78,17 @@ export default function ResetPassword() {
           type="email"
           autoComplete="email"
           placeholder="user@email.com"
-          sx={{ mt: 2 }}
+          sx={{
+            mt: 2,
+            "& .MuiOutlinedInput-root": {
+              "&.Mui-focused fieldset": {
+                borderColor: "#6251DD",
+              },
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "#6251DD",
+            },
+          }}
           helperText={errors?.email?.message}
           error={!!errors?.email?.message}
           {...register("email", VALIDATE.email)}
