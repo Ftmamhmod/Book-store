@@ -8,7 +8,7 @@ export default function Cart() {
   const headLinks: HeadLinks[] = [
     {
       name: "Home",
-      path: "/book-store/home",
+      path: "/dashboard/home",
     },
     {
       name: "Cart",

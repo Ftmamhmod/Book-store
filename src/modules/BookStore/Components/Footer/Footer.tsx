@@ -146,9 +146,9 @@ export default function Footer() {
             COMPANY
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            <NavLink to="/book-store/home">Home</NavLink>
-            <NavLink to="/book-store/shop">Books</NavLink>
-            <NavLink to="/book-store/blog">Blog</NavLink>
+            <NavLink to="/dashboard/home">Home</NavLink>
+            <NavLink to="/dashboard/shop">Books</NavLink>
+            <NavLink to="/dashboard/blog">Blog</NavLink>
           </Box>
         </Grid>
         <Grid size={{ xs: 12, md: 4 }}>
@@ -156,9 +156,9 @@ export default function Footer() {
             IMPORTANT LINKS
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            <NavLink to="/book-store/home">Privacy Policy</NavLink>
-            <NavLink to="/book-store/home">FAQs</NavLink>
-            <NavLink to="/book-store/home">Terms of Service</NavLink>
+            <NavLink to="/dashboard/home">Privacy Policy</NavLink>
+            <NavLink to="/dashboard/home">FAQs</NavLink>
+            <NavLink to="/dashboard/home">Terms of Service</NavLink>
           </Box>
         </Grid>
       </Grid>
@@ -173,11 +173,11 @@ export default function Footer() {
           >
             © {new Date().getFullYear()} Fatma. All Rights Reserved.
             <Typography variant="caption" fontWeight={"bold"}>
-              <NavLink to="/book-store/home" style={{ marginLeft: 1 }}>
+              <NavLink to="/dashboard/home" style={{ marginLeft: 1 }}>
                 Privacy
               </NavLink>{" "}
               |
-              <NavLink to="/book-store/home" style={{ marginLeft: 3 }}>
+              <NavLink to="/dashboard/home" style={{ marginLeft: 3 }}>
                 Terms of Service
               </NavLink>
             </Typography>

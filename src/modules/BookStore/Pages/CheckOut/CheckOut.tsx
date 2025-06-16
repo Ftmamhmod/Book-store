@@ -9,11 +9,11 @@ export default function CheckOut() {
   const headLinks: HeadLinks[] = [
     {
       name: "Home",
-      path: "/book-store/home",
+      path: "/dashboard/home",
     },
     {
       name: "Cart",
-      path: "/book-store/cart",
+      path: "/dashboard/cart",
     },
     {
       name: "Checkout",

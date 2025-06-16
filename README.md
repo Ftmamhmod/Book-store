@@ -26,7 +26,7 @@ This is a Book Store management application that allows users to manage books, c
 ## Project Structure
 
 ```
-book-store/
+dashboard/
 ├── src/
 │   ├── controllers/
 │   ├── models/

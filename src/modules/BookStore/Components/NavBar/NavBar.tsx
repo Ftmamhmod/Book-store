@@ -63,11 +63,11 @@ export default function NavBar() {
     };
 
   const navLinks = [
-    { name: "Home", path: "/book-store/home" },
-    { name: "Books", path: "/book-store/shop" },
-    { name: "About Us", path: "/book-store/about-us" },
-    { name: "Contact Us", path: "/book-store/contact-us" },
-    { name: "Blog", path: "/book-store/blog" },
+    { name: "Home", path: "/dashboard/home" },
+    { name: "Books", path: "/dashboard/shop" },
+    { name: "About Us", path: "/dashboard/about-us" },
+    { name: "Contact Us", path: "/dashboard/contact-us" },
+    { name: "Blog", path: "/dashboard/blog" },
   ];
 
   return (
@@ -99,7 +99,7 @@ export default function NavBar() {
         >
           <Toolbar sx={{ justifyContent: "space-between" }}>
             <Box>
-              <NavLink to={"/book-store/home"}>
+              <NavLink to={"/dashboard/home"}>
                 <Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />
               </NavLink>
             </Box>
@@ -153,7 +153,7 @@ export default function NavBar() {
                   >
                     <IconButton
                       onClick={() => {
-                        navigate("/book-store/cart");
+                        navigate("/dashboard/cart");
                       }}
                       title="Cart"
                       color="inherit"
@@ -202,7 +202,7 @@ export default function NavBar() {
                 >
                   <IconButton
                     onClick={() => {
-                      navigate("/book-store/cart");
+                      navigate("/dashboard/cart");
                     }}
                     title="Cart"
                     color="inherit"
