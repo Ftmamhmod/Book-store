@@ -145,7 +145,7 @@ export default function NavBar() {
                     <LogoutIcon />
                   </IconButton>
                   <Badge
-                    badgeContent={"1"}
+                    badgeContent={cartCounter}
                     color="success"
                     overlap="circular"
                     max={99}

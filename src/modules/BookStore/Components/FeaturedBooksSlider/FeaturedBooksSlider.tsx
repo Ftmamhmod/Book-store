@@ -59,7 +59,6 @@ export default function FeaturedBooksSlider({
             borderRadius: "8px",
           }}
         />
-        'auto 80px'
       </Grid>
       <Grid
         size={{ sm: 12, md: 7, lg: 6 }}
