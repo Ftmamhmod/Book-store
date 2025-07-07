@@ -21,10 +21,10 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import Grid from "@mui/material/Grid2";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Cookies from "js-cookie";
 import Swal from "sweetalert2";
-// import { RootState } from "../../../Store/Store";
+import { RootState } from "../../../Store/Store";
 
 export default function NavBar() {
   const theme = useTheme();
@@ -32,7 +32,7 @@ export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
   const token = Cookies.get("authBookToken");
-  // const { cartCounter } = useSelector((state: RootState) => state.cart);
+  const { cartCounter } = useSelector((state: RootState) => state.cart);
 
   const handleLogOut = () => {
     if (token) {
