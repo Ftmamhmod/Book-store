@@ -77,10 +77,10 @@ export default function BookSlide({
             sx={{
               position: "absolute",
               borderRadius: "0",
-              width: "100%",
+              width: "80%",
               height: "50px",
               bottom: "15%",
-              left: "0%",
+              left: "10%",
               transform: "translateX(0%) translateY(50px)",
               opacity: 0,
               backgroundColor: "#ED553B",
